@@ -1,0 +1,23 @@
+#navbar_background {
+    background-color: #1B1B1B !important;
+    padding: 20px !important;
+}
+
+.disabled {
+    color: #FD5970 !important;
+}
+
+.active {
+    color: #FFFFFF !important;
+}
+
+#book_now{
+    background-color:#FD5970 !important;
+    color: #FFFFFF !important;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+body{
+    font-family: "Montserrat";
+}
