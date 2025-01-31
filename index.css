@@ -55,6 +55,21 @@ h3 {
     font-size: 50px;
 }
 
+h4{
+    color:white;
+    font-size:30px;
+}
+
+h5{
+    color:white;
+    font-size:15px;
+}
+
+.container-fluid{
+    padding-left:0 !important;
+    padding-right: 0 !important;
+}
+
 /*Home page formatting*/
 #home{
     visibility: visible;
@@ -87,8 +102,46 @@ h3 {
     background-image: url(home_background.png); 
     background-size: cover; 
     background-position: center; 
-    width: 100vw; 
-    opacity: 90%;
-    height: 100%;
+    width: 100%; 
+    height: 100vh;
     height: fit-content;
+}
+
+#bricks{
+    background-image: url(bricks_background.png) !important;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100vh;
+}
+
+#serviceCol{
+    background-color: rgba(27, 27, 27, 0.7) !important;
+    margin: 40px;
+    height:400px;
+    border-radius:10px;
+}
+
+#nutritionService{
+    text-align: center;
+    background-image: url(nutrition.png) !important;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:200px;
+}
+
+#serviceText{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self:center;
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px
+}
+
+#servicePrice{
+    text-align: center;
+    padding: 5px;
 }
