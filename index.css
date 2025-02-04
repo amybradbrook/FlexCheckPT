@@ -313,12 +313,15 @@ h6{
 
 #review{
     width: 29vw;
-    height:42vh;
+    height:40vh;
     background-color: rgba(27, 27, 27, 0.7) !important;
+    margin-left:2vh;
+    margin-right: 2vh;
 }
 
 #reviewInfo{
     display: flex;
     align-items: center;
     margin: 2vh;
+    height: 10vh;
 }
