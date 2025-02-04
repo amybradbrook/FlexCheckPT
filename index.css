@@ -69,7 +69,7 @@ h5{
 #bricks{
     display: flex;
     flex-direction: column;
-    background-image: url(bricks_background.png) !important;
+    background-image: url(public/bricks_background.png) !important;
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -108,7 +108,7 @@ h5{
 }
 
 #home_background_image{
-    background-image: url(home_background.png); 
+    background-image: url(public/home_background.png); 
     background-size: cover; 
     background-position: center; 
     width: 100%; 
@@ -144,7 +144,7 @@ h5{
 
 #nutritionService{
     text-align: center;
-    background-image: url(nutrition.png) !important;
+    background-image: url(public/nutrition.png) !important;
     background-size: cover;
     background-position: center;
     width:100%;
@@ -153,7 +153,7 @@ h5{
 
 #programService{
     text-align: center;
-    background-image: url(program_planning.png) !important;
+    background-image: url(public/program_planning.png) !important;
     background-size: cover;
     background-position: center;
     width:100%;
@@ -162,7 +162,7 @@ h5{
 
 #trainingService{
     text-align: center;
-    background-image: url(training.png) !important;
+    background-image: url(public/training.png) !important;
     background-size: cover;
     background-position: center;
     width:100%;
