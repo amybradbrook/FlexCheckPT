@@ -46,24 +46,29 @@ body{
 
 h1{
     color: white;
-    font-size: 70px;
+    font-size: 11vh;
     font-weight: 900;
 }
 
 h3 {
     color: white;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 8vh;
 }
 
 h4{
     color:white;
-    font-size:30px;
+    font-size:5vh;
 }
 
 h5{
     color:white;
-    font-size:20px;
+    font-size:4vh;
+}
+
+h6{
+    color: white;
+    font-size: 3vh;
 }
 
 #bricks{
@@ -270,4 +275,50 @@ h5{
     justify-content: center;
     align-self: center;
     height:100%
+}
+
+/*About us page*/
+#about{
+    height:100vh
+}
+
+#titleContact{
+    text-align: center;
+    margin-top: 2vh;
+}
+
+#descriptionbox{
+    display: flex;
+    align-items: center;
+    padding:0;
+    margin-left:8vh;
+    margin-right:8vh;
+    height:30vh;
+    background-color: rgba(27, 27, 27, 0.7) !important;
+}
+
+#personalTrainerPhoto{
+    height:30vh;
+}
+
+#textcontent{
+    padding: 2vh;
+}
+
+#reviewbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#review{
+    width: 29vw;
+    height:42vh;
+    background-color: rgba(27, 27, 27, 0.7) !important;
+}
+
+#reviewInfo{
+    display: flex;
+    align-items: center;
+    margin: 2vh;
 }
