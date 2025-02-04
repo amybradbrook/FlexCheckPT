@@ -215,33 +215,33 @@ h5{
 }
 
 #contact_box{
-    height:max-content;
-    padding: 20px;
+    height:auto;
+    padding: 5vh;
 }
 
 #title{
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 2vh;
 }
 
 #contactrow{
     display: flex !important;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     background-color:rgba(27, 27, 27, 0.7) !important;
-    min-height: 20%;
-    padding:10px;
+    min-height: 10vh;
+    padding:2vh;
     align-items: center;
 }
 
 #pngsymbol{
-    height: 40px;
+    height: 5vh;
     width: auto;
 }
 
 .row{
-    margin: 10px;
+    margin: 1vh;
 }
 
 #contact-text{
@@ -251,7 +251,7 @@ h5{
 }
 
 #map_frame{
-    height: 90vh;
+    height: 80vh;
     width: 40vw;
 }
 #map{
