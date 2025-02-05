@@ -163,6 +163,7 @@ h6{
     background-position: center;
     width:100%;
     height:40vh;
+    mask-image: linear-gradient(to top, rgba(27,27,27,0)0% , rgba(27,27,27,1) 90%);
 }
 
 #programService{
@@ -172,6 +173,7 @@ h6{
     background-position: center;
     width:100%;
     height:40vh;
+    mask-image: linear-gradient(to top, rgba(27,27,27,0)0% , rgba(27,27,27,1) 90%);
 }
 
 #trainingService{
@@ -181,6 +183,7 @@ h6{
     background-position: center;
     width:100%;
     height:40vh;
+    mask-image: linear-gradient(to top, rgba(27,27,27,0)0% , rgba(27,27,27,1) 90%);
 }
 
 #serviceText{
@@ -362,3 +365,38 @@ h6{
     text-align: center;
 
 }
+
+/* booking page */
+#serviceBook{
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 2vh;
+    background-color:rgba(27, 27, 27, 0.7) !important;
+    min-height: 20vh;
+    align-items: center;
+}
+
+#serviceChoice{
+    margin:0;
+    padding:0;
+    height: 20vh;
+    width:16vw;
+    display: block;
+    object-fit: cover;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0)0% , rgba(27,27,27,0.7) 100%);
+}
+
+.unselected{
+    background-color: #5B5B5B;
+    height:20vh;
+    width:3vh
+}
+
+.selected{
+    background-color: #FD5970;
+    height:20vh;
+    width:3vh
+}
+
+
