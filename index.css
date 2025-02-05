@@ -325,3 +325,40 @@ h6{
     margin: 2vh;
     height: 10vh;
 }
+
+/*Confirmation page*/
+#confirmBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#confirmbox{
+    display:flex;
+    background-color: rgba(27, 27, 27, 0.7) !important;
+    align-items: center;
+    justify-content: center;
+    width:60vw;
+}
+#textconfirm{
+    text-align: center;
+    padding:7vh;
+}
+.textSpace{
+    padding:2vh
+}
+
+#location_button{
+    justify-self: center;
+    background-color: #FD5970 !important;
+    color: white;
+    font-size: 4vh;
+    font-weight: bold;
+    border:none;
+    border-radius: 10px;
+    padding:2vh;
+    margin-top:4vh;
+    text-align: center;
+
+}
