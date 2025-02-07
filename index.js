@@ -31,7 +31,14 @@ const updateCalendar = () =>{
         const date = new Date(currentYear, currentMonth, i);
         const isPast = date < currentDateToday;
         const sunday = date.getDay() === 0;
-        const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';
+        var activeClass;
+        if (date.toDateString()=== new Date().toDateString() && !isPast){
+            activeClass="active";
+        } else if (!isPast && !sunday){
+            activeClass="inactive";
+        } else{
+            activeClass=""
+        }
         const notAvailClass = isPast ? "notavail" : "" || sunday ? "notavail" : "";
 
         datesHTML+=`<div class="date ${activeClass} ${notAvailClass}">${i}</div>`;
@@ -48,8 +55,29 @@ const updateCalendar = () =>{
         })
     })
 
-
 }
+
+const updateTimes = () => {
+    times = ["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
+        "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"
+    ]
+    timeList = ''
+    for (let i=0; i<times.length; i++){
+        const activeStatus = i===0 ? "activeTime" : "inactiveTime";
+        timeList+=`<button class="time ${activeStatus}">${times[i]}</button>`;
+    }
+    console.log(timeList)
+
+    document.getElementById("timesList").innerHTML = timeList;
+
+    document.querySelectorAll(".time").forEach(t=>{
+        t.addEventListener("click", function() {
+            document.querySelectorAll(".time").forEach(ti => ti.classList.remove("activeTime"))
+            this.classList.add("activeTime");
+        })
+    })
+}
+updateTimes();
 
 prevBtn.addEventListener('click', ()=>{
     const today=new Date()
@@ -97,17 +125,103 @@ function toggleVisibility(event, tab){
 }
 
 function selectService(event, tab){
-    const listOfTabs = ["trainingSession", "programPlanning", "nutritionAdvice"]
-    listOfTabs.remove(tab)
+    var listOfTabs = ["trainingSession", "programPlanning", "nutritionAdvice"]
+    listOfTabs = listOfTabs.filter(function(item){
+        return item!==tab
+    })
     const wanted = document.getElementById(tab);
     wanted.classList.remove("unselected")
     wanted.classList.add("selected")
 
-    for (let i=0; i<listOfTabs.length(); i++){
+    console.log(listOfTabs)
+
+    for (let i=0; i<listOfTabs.length; i++){
         const element = document.getElementById(listOfTabs[i]);
         element.classList.remove("selected");
         element.classList.add("unselected")
     }
 
 }
+
+function toBookNow(event, choice){
+    toggleVisibility(event, 'book');
+    var listOfTabs = ["trainingSession", "programPlanning", "nutritionAdvice"]
+    listOfTabs = listOfTabs.filter(function(item){
+        return item!==choice
+    })
+    
+    for (let i=0; i<listOfTabs.length; i++){
+        const element = document.getElementById(listOfTabs[i]);
+        element.classList.remove("selected");
+        element.classList.add("unselected")
+    }
+    const wanted = document.getElementById(choice);
+    wanted.classList.remove("unselected")
+    wanted.classList.add("selected")
+    
+}
+
+function confirm(event){
+    const fname = document.getElementById("fname").value;
+    const lname = document.getElementById("lname").value;
+    const email = document.getElementById("email").value;
+    var time;
+    var date;
+    var month;
+    var year;
+
+    document.querySelectorAll('button.time').forEach((h6)=> {
+        if (h6.classList.contains("activeTime")){
+            time=h6.innerHTML;
+        }
+    })
+    console.log(time)
+
+    document.querySelectorAll(".date").forEach((d)=>{
+        if (d.classList.contains("active")){
+            date=d.textContent;
+        }
+    })
+
+    if (date==="1"){
+        date+="st"
+    } else if (date=="2"){
+        date+="nd"
+    } else if (date=="3"){
+        date+="rd"
+    } else{
+        date+="th"
+    }
+
+    const monthYear = document.querySelector(".monthYear").textContent
+    const splitMonthYear = monthYear.split(" ")
+    month = splitMonthYear[0];
+    year = splitMonthYear[1];
+
+    var thankyou="THANK YOU";
+    if (fname!==""){
+        thankyou += " " + fname.toUpperCase();
+    }
+    thankyou+="!"
+
+    var sessionClass = document.querySelector(".selected");
+    console.log(sessionClass.id)
+    var session;
+    if (sessionClass.id==="programPlanning"){
+        session="program consultation"
+    } else if (sessionClass.id==="trainingSession"){
+        session="training session"
+    } else{
+        session="nutrition consultation"
+    }
+
+
+    document.getElementById("bookedSessionName").innerHTML = thankyou;
+    var confirmation = `Looking forward to our ${session} on ${month} ${date}, ${year} at ${time}`
+    document.getElementById("bookedSessionDetails").innerHTML = confirmation;
+
+    toggleVisibility(event, "Confirmation")
+}
+
+
 

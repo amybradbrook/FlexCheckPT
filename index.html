@@ -12,7 +12,7 @@
         <div class="container-fluid" id="navbar_background">
             <div class="row">
                 <div class="navbar-brand col-sm-2" href="#">
-                    <img src="public/logo.jpg" id="logo" class="rounded-pill">
+                    <img src="public/logo.jpg" id="logo" class="rounded-pill" onclick="toggleVisibility(event, 'about')">
                 </div>
                 <ul class="nav justify-content-end col-sm-10">
                     <li class="nav-item">
@@ -38,7 +38,7 @@
                 <div id="central_home">
                     <h3 id="home_text">Train today for a</h3>
                     <h1 id="home_text">STRONGER TOMORROW</h1>
-                    <h3 id="home_button">Book Your First Session</h3>
+                    <button id="home_button" onclick="toggleVisibility(event, 'services')">Learn More About Our Services</button>
                 </div>
             </div>  
         </section>
@@ -52,7 +52,7 @@
                             </div>
                             <h5 id="servicePrice">$50/month</h5>
                             <h5 id="serviceDesc">Includes monthly consultations and meal plans to maximize progress.</h5>
-                            <h3 id="bookNowButton">Book now</h3>
+                            <button id="bookNowButton" onClick="toBookNow(event, 'nutritionAdvice')">Book now</button>
                         </div>
                     </div>
                     <div class="col" id="servicecolumn"> 
@@ -62,17 +62,17 @@
                             </div>
                             <h5 id="servicePrice">$100/month</h5>
                             <h5 id="serviceDesc">Includes a 30 minute consultation and monthly fitness program planning.</h5>
-                            <h3 id="bookNowButton">Book now</h3>
+                            <button id="bookNowButton" onClick="toBookNow(event, 'programPlanning')">Book now</button>
                         </div>
                     </div>
                     <div class="col" id="servicecolumn"> 
                         <div class="container-fluid" id="servicebox">
                             <div class="bg" id="trainingService">
-                                <h4 id="serviceText">TRAINING SESSIONS</h4>
+                                <h4 id="serviceText" onClick="toBookNow(event, 'trainingSession')">TRAINING SESSIONS</h4>
                             </div>
                             <h5 id="servicePrice">$30/month</h5>
                             <h5 id="serviceDesc">Includes a guided 1-hour personal training session designed for you.</h5>
-                            <h3 id="bookNowButton">Book now</h3>
+                            <button id="bookNowButton"  onClick="toBookNow(event, 'trainingSession')">Book now</button>
                         </div>
                     </div>
                 </div>
@@ -170,37 +170,37 @@
         </section>
         <section id="book" class="invisible">
             <div class="bg" id="bricks">
-                <div id="confirmBox">
+                <div id="confirmBox" class="container-fluid">
                     <div class="row">
                         <div class="col" id="contact_box">
                             <div class="row" id="title">
                                 <h3>SELECT A SERVICE</h3>
                             </div>
                             <div class="row">
-                                <div id="serviceBook" class="row" onclick="selectService(event, 'trainingSession')">
+                                <button id="serviceBook" class="row" onclick="selectService(event, 'trainingSession')">
                                     <img src="public/training.png" id="serviceChoice">
                                     <div class="col">
                                         <h5>TRAINING SESSION</h5>
                                         <h6>(1 hour)</h6>
                                     </div>
                                     <div class="selected" id="trainingSession"></div>
-                                </div>
-                                <div id="serviceBook" class="row" onclick="selectService(event, 'programPlanning')">
+                                </button>
+                                <button id="serviceBook" class="row" onclick="selectService(event, 'programPlanning')">
                                     <img src="public/program_planning.png" id="serviceChoice">
                                     <div class="col">
                                         <h5>PROGRAM PLANNING</h5>
                                         <h6>(30 hour)</h6>
                                     </div>
                                     <div class="unselected" id="programPlanning"></div>
-                                </div>
-                                <div id="serviceBook" class="row">
+                                </button>
+                                <button id="serviceBook" class="row">
                                     <img src="public/nutrition.png" id="serviceChoice" onclick="selectService(event, 'nutritionAdvice')">
                                     <div class="col">
                                         <h5>NUTRTION ADVICE</h5>
                                         <h6>(30 min)</h6>
                                     </div>
                                     <div class="unselected" id="nutritionAdvice"></div>
-                                </div>
+                                </button>
                             </div>
                         </div>
                         <div class="col" id="map">
@@ -255,25 +255,13 @@
                                     </div>
                                 
                                     <div class="col-sm-4" id="timebox">
-                                        <div class="timesList">
-                                            <h6 class="time activeTime">7:00 AM</h6>
-                                            <h6 class="time inactiveTime">8:00 AM</h6>
-                                            <h6 class="time inactiveTime">9:00 AM</h6>
-                                            <h6 class="time inactiveTime">10:00 AM</h6>
-                                            <h6 class="time inactiveTime">11:00 AM</h6>
-                                            <h6 class="time inactiveTime">12:00 AM</h6>
-                                            <h6 class="time inactiveTime">1:00 PM</h6>
-                                            <h6 class="time inactiveTime">2:00 PM</h6>
-                                            <h6 class="time inactiveTime">3:00 PM</h6>
-                                            <h6 class="time inactiveTime">4:00 PM</h6>
-                                            <h6 class="time inactiveTime">5:00 PM</h6>
-                                            <h6 class="time inactiveTime">6:00 PM</h6>
-                                            <h6 class="time inactiveTime">7:00 PM</h6>
+                                        <div id="timesList">
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row" id="bookingBoxTime">
-                                    <button id="timeSlotBook">Book Now</button>
+                                    <button id="timeSlotBook" onClick="confirm(event)">Book Now</button>
                                 </div>
                                 
                             </div>
@@ -287,9 +275,9 @@
                 <div id="confirmBox">
                     <div id="confirmbox">
                         <div id="textconfirm">
-                            <h3 class="textSpace">THANK YOU!</h3>
-                            <h5 class="textSpace">Looking forward to our training session on Februrary 10th at 6:00 pm.</h5>
-                            <h3 id="location_button">View our location</h3>
+                            <h3 class="textSpace" id ="bookedSessionName">THANK YOU!</h3>
+                            <h5 class="textSpace" id="bookedSessionDetails"></h5>
+                            <button id="location_button" onClick="toggleVisibility(event, 'contact')">View our location</button>
                         </div>
                     </div>
                 </div>
