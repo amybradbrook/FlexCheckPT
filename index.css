@@ -53,7 +53,7 @@ h1{
 h3 {
     color: white;
     font-weight: bold;
-    font-size: 7vh;
+    font-size: 6vh;
 }
 
 h4{
@@ -68,7 +68,7 @@ h5{
 
 h6{
     color: white;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 label{
@@ -371,6 +371,7 @@ label{
 }
 
 /* booking page */
+
 #serviceBook{
     display: flex !important;
     flex-direction: row;
@@ -407,7 +408,7 @@ label{
     background-color:rgba(27, 27, 27, 0.7) !important;
     width: 50vw;
     margin:5vh;
-    padding: 2vh;
+    padding: 5vh;
 }
 
 #bookingTitle{
@@ -420,8 +421,146 @@ input{
 }
 
 #inputBox{
-    margin:0;
+    margin:0.5vh 1vw 0.5vh 1vw;
+}
+
+#personalInfo{
+    margin-bottom: 40px;
+}
+
+.calendar{
+    width:29vw;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    padding:1vh;
+    background:#1B1B1B;
+    border-radius:2vh;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1vh;
+    color:white;
+}
+
+.monthYear{
+    font-size: 2.5vh;
+}
+
+.header button{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border:none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 4vh;
+    height:6vh;
+    background-color: #1B1B1B;
+    color:white;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.day{
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0.5vh;
+    font-size: 2.5vh;
+
+}
+
+.dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5vh;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1vh;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 50%;;
+    width: 6vh;
+    height: 6vh;
+    transition: 0.2s;
+    color: white;
+    font-size: 2.5vh;
+}
+
+.date:hover,
+.date.active{
+    background-color: #FD5970;
+    color:#FFFFFF
 }
 
 
+.notavail{
+    color:#5B5B5B;
+    cursor:default;
+}
+
+#timeBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.timesList{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height:40vh;
+    align-items: center;
+}
+
+.time{
+    border-radius: 2vh;
+    padding: 1vh;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 6vh 1.5vh 6vh;
+    width: 10vw;
+}
+.inactiveTime{
+    color:black;
+    background-color: white;
+}
+
+.activeTime{
+    color: white;
+    background-color: #FD5970;
+}
+
+#bookingBoxTime{
+align-items: center;
+justify-content: center;
+}
+
+#timeSlotBook{
+    justify-self: center;
+    background-color: #FD5970 !important;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border:none;
+    border-radius: 10px;
+    padding:10px;
+    margin:10px;
+    text-align: center;
+    width: 30%
+}
 
