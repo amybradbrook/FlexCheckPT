@@ -2,11 +2,12 @@
 
 #navbar_background {
     background-color: #1B1B1B !important;
-    padding: 20px !important;
+    padding: 3vh !important;
+    height:16vh;
 }
 
 #logo{
-    width: 50px;
+    width: 5vw;
 }
 
 .disabled {
@@ -21,11 +22,11 @@
     background-color:#FD5970 !important;
     color: #FFFFFF !important;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 2vh;
 }
 
 .nav-item{
-    margin-right:30px !important;
+    margin-right:4vh !important;
 }
 
 /*General page formatting*/
@@ -42,6 +43,9 @@ body{
     width: 100vw !important;
     background-color: #1B1B1B !important;
     overflow-x: hidden;
+}
+a{
+    font-size: 3vh !important;
 }
 
 h1{
@@ -86,6 +90,13 @@ label{
     justify-content: center;
 }
 
+.invisible{
+    display: none;
+}
+
+.visible{
+    display:contents;
+}
 
 /*Home page formatting*/
 #home{
@@ -371,6 +382,11 @@ label{
 }
 
 /* booking page */
+
+#BookNow{
+    min-height: calc(100vh - 16vh);
+    padding-top: 5vh;
+}
 
 #serviceBook{
     display: flex !important;

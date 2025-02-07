@@ -69,4 +69,45 @@ nextBtn.addEventListener('click', ()=>{
 
 updateCalendar();
 
+//page visibility
+
+function toggleVisibility(event, tab){
+    document.querySelectorAll("section").forEach(section=>{
+        if (section.classList.contains("visible")){
+            section.classList.remove("visible")
+            section.classList.add('invisible')
+            
+        }
+        if (section.id===tab){
+            section.classList.remove("invisible")
+            section.classList.add("visible")
+        }
+    })
+
+    document.querySelectorAll("a").forEach(item =>{
+        if (item.classList.contains("disabled")){
+            item.classList.remove("disabled")
+            item.classList.add("active")
+        }
+        if (item.id===tab){
+            item.classList.remove("active")
+            item.classList.add("disabled")
+        }
+    })
+}
+
+function selectService(event, tab){
+    const listOfTabs = ["trainingSession", "programPlanning", "nutritionAdvice"]
+    listOfTabs.remove(tab)
+    const wanted = document.getElementById(tab);
+    wanted.classList.remove("unselected")
+    wanted.classList.add("selected")
+
+    for (let i=0; i<listOfTabs.length(); i++){
+        const element = document.getElementById(listOfTabs[i]);
+        element.classList.remove("selected");
+        element.classList.add("unselected")
+    }
+
+}
 
