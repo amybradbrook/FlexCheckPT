@@ -53,7 +53,7 @@ h1{
 h3 {
     color: white;
     font-weight: bold;
-    font-size: 8vh;
+    font-size: 7vh;
 }
 
 h4{
@@ -69,6 +69,10 @@ h5{
 h6{
     color: white;
     font-size: 3vh;
+}
+
+label{
+    color: white;
 }
 
 #bricks{
@@ -398,5 +402,26 @@ h6{
     height:20vh;
     width:3vh
 }
+
+#bookingDetails{
+    background-color:rgba(27, 27, 27, 0.7) !important;
+    width: 50vw;
+    margin:5vh;
+    padding: 2vh;
+}
+
+#bookingTitle{
+    text-align: center;
+}
+
+input{
+    border-radius: 2vh;
+    border:0;
+}
+
+#inputBox{
+    margin:0;
+}
+
 
 
